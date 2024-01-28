@@ -24,8 +24,8 @@ The term "Dark Patterns" was coined by *Harry Brignull* in 2010, referring to:
 
 ## :open_file_folder: Repository Map
 - **[Main](https://github.com/marcushash/Ethiguard-Dark-Pattern-Buster):** Core files shared between different implementations;
-- **[Bait-And-Switch](https://github.com/marcushash/Ethiguard-Dark-Pattern-Buster):** Implementation focusing on Bait and Switch dark patterns;
-- **[Hidden-Information](https://github.com/marcushash/Ethiguard-Dark-Pattern-Buster):** Implementation dedicated to detecting Hidden Information patterns.
+- **[Bait-And-Switch](https://github.com/marcushash/Ethiguard-Bait-And-Switch):** Implementation focusing on Bait and Switch dark patterns;
+- **[Hidden-Information](https://github.com/marcushash/Ethiguard-Hidden-Information):** Implementation dedicated to detecting Hidden Information patterns.
 
 <br>
 
