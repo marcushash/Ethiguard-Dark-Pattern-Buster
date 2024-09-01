@@ -1,51 +1,98 @@
-<div align="center">
-  <a href="https://github.com/marcushash/Ethiguard-Dark-Pattern-Buster/releases">
-    <img src="https://img.shields.io/github/release/marcushash/Ethiguard-Dark-Pattern-Buster?include_prereleases=&sort=semver&color=gold" alt="GitHub release">
-  </a>
-</div>
+# ETHIGUARD 🚀🔍
 
-<h1 align="center"> Ethiguard (Project Privacy Matters) </h1>
-<p align="center"> 🚀 Chrome Extension to Detect Dark Patterns </p>
+![License](https://img.shields.io/github/license/marcushash/Ethiguard-Dark-Pattern-Buster?style=flat-square)
+![Issues](https://img.shields.io/github/issues/marcushash/Ethiguard-Dark-Pattern-Buster?style=flat-square)
+![Forks](https://img.shields.io/github/forks/marcushash/Ethiguard-Dark-Pattern-Buster?style=flat-square)
+![Stars](https://img.shields.io/github/stars/marcushash/Ethiguard-Dark-Pattern-Buster?style=flat-square)
 
-<div align="center">
-  <a href="https://github.com/marcushash/Ethiguard-Dark-Pattern-Buster/issues">REPORT BUG</a>
-</div>
+## Browser Extension for Tracking Pixel Detection 🛡️
 
-## :clipboard: About
-Ethiguard is an innovative Chrome extension that analyzes webpage DOM to detect deceptive designs, commonly known as Dark Patterns. Currently, it excels in detecting **Bait and Switch** and **Hidden Information** instances.
+- **By:** Thejal M
 
-<br>
+ETHIGUARD is a browser extension crafted using HTML, CSS, and JavaScript to address growing concerns surrounding online privacy and tracking. It identifies and monitors tracking pixels embedded within websites in real-time. With ETHIGUARD, users can detect and manage these tracking mechanisms efficiently, ensuring a more private browsing experience.
 
-## :newspaper: What are Dark Patterns?
-The term "Dark Patterns" was coined by *Harry Brignull* in 2010, referring to:
-> Tricks used in websites and apps that make you do things that you didn't mean to, like buying or signing up for something.
+## What Is Deceptive Data Collection? 🤔
 
-<br>
+Deceptive design patterns, often referred to as dark patterns, are user interface (UI) design techniques used to manipulate users into taking actions or making choices they might not otherwise make. This extension helps uncover these patterns by focusing on tracking pixels.
 
-## :open_file_folder: Repository Map
-- **[Main](https://github.com/marcushash/Ethiguard-Dark-Pattern-Buster):** Core files shared between different implementations;
-- **[Bait-And-Switch](https://github.com/marcushash/Ethiguard-Bait-And-Switch):** Implementation focusing on Bait and Switch dark patterns;
-- **[Hidden-Information](https://github.com/marcushash/Ethiguard-Hidden-Information):** Implementation dedicated to detecting Hidden Information patterns.
+## What Are Tracking Pixels? 🖼️
 
-<br>
+Tracking pixels, also known as web beacons or pixel tags, are tiny, invisible graphic images embedded in web pages or emails. They track user behavior and gather information about website visitors' interactions.
 
-## :ledger: How to...
-Visit the **[Documentation]()** page to learn how to install and use the extension effectively.
+### How Are Tracking Pixels Used? 📊
 
-<p align="center">Supported languages: <img src="https://image-url-for-language-icon.png" alt="English" title="English"> <img src="https://image-url-for-language-icon.png" alt="Tamil" title="Tamil"> <img src="https://image-url-for-language-icon.png" alt="Malayalam" title="Malayalam"></p>
+1. **Data Collection**: When a user visits a web page containing a tracking pixel, their browser loads the image from the server. This sends a request with details like IP address, browser type, and device information.
 
-<!-- Add more images or GIFs to make it visually appealing -->
-<p align="center"><img src="https://image-url-for-extension-screenshot.png" alt="Ethiguard Screenshot"></p>
+2. **Tracking**: The server records this information and associates it with a unique identifier, allowing tracking across multiple pages or sessions.
 
-## :art: Screenshots
-<!-- Add more screenshots here -->
+3. **Analytics and Targeting**: The collected data is used for website analytics, targeted advertising, personalization, and measuring marketing effectiveness.
 
-## :sparkles: Latest Updates
-- **Version 1.1.1 released!** Check out the [release notes](https://github.com/marcushash/Ethiguard-Dark-Pattern-Buster/releases/tag/vX.Y.Z) for details.
+4. **Examples of Collected Data**:
+   - IP Address
+   - Browser and Device Information
+   - Referral Source
+   - Page Views and Interactions
+   - Cookies and Session IDs
+   - User Preferences
+   - Conversion Events
+   - Social Media Engagement
 
-<!-- Add any additional content or sections of your choice -->
+## How Does Our Extension Work? 🔧
 
-## :raising_hand: Contribute
-We welcome contributions! If you find a new dark pattern or have an improvement in mind, please feel free to submit a pull request.
+1. **Retrieving Images and SVGs**:
+   ETHIGUARD retrieves all image and SVG elements from the webpage using JavaScript.
 
-</details>
+2. **Checking Dimensions**:
+   It checks the dimensions of these elements to identify those that are 0x0 pixels, indicating hidden or invalid tracking pixels.
+
+3. **Checking for Links**:
+   ETHIGUARD inspects whether the invalid pixels contain a link, identifying potential tracking pixels.
+
+4. **Counting Tracking Pixels**:
+   It increments a counter for each detected tracking pixel and displays the count to the user.
+
+## Working Examples 🧩
+
+### Initialization:
+The `checkImageSizes` function initializes an empty array `verifiedElements` to store elements that match the criteria.
+
+### Criteria:
+- Sets `maxWidth` and `maxHeight` to 1 pixel.
+- Selects various elements (img, svg, button) and checks their dimensions.
+
+### Checking Dimensions:
+- For each `img` or `svg`, it checks if dimensions are ≤ 1 pixel and if they contain a link.
+- Adds matching elements to `verifiedElements`.
+
+### Final Actions:
+- Updates the badge and sends messages to the background script to update counts in the database based on `switchValue`.
+- Flags elements with dimensions ≤ 1x1 pixels and adds them to `verifiedElements`.
+
+## Usage 📈
+
+1. **Install the Extension**: Follow the installation instructions for your browser.
+2. **Open a Web Page**: Navigate to a page with images you want to analyze.
+3. **Activate Analysis**: Click the extension icon in your browser toolbar.
+4. **View Alerts**: Check highlighted images and details about detected tracking pixels.
+5. **Generate Reports**: Export a summary of detected issues and their details.
+
+## Contributing 🤝
+
+Contributions are welcome! To contribute:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Create a new Pull Request.
+
+Please adhere to the project's coding standards and guidelines.
+
+## License 📜
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact 📧
+
+For any questions or issues, please reach out to:
+
+- **Thejal M**: [LinkedIn](https://www.linkedin.com/in/thejal-murali-a4a014282/) | [Email](mailto:vv2004thejal@gmail.com)
