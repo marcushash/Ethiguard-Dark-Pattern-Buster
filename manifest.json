@@ -1,0 +1,28 @@
+{
+  "name": "Ethiguard",
+  "version": "1.1.1",
+  "description": "Dark Pattern Buster(Prototype)",
+  "manifest_version": 3,
+    
+  "permissions": ["activeTab", "tabs", "scripting"],
+  "host_permissions": ["https://www.developer.chrome.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["utils/bootstrap/js/jquery-3.7.0.js" , "content.js"]
+  }
+  ],
+  "action": {
+    "default_icon": {                
+      "16": "images/icon16.png",
+      "24": "images/icon24.png",     
+      "32": "images/icon32.png",
+      "128": "images/icon128.png"
+    },
+    "default_popup": "main.html",
+    "default_title": "Dark Pattern Buster(Prototype)"
+  }
+}
