@@ -89,7 +89,7 @@ Please adhere to the project's coding standards and guidelines.
 
 ## License 📜
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/marcushash/Ethiguard-Dark-Pattern-Buster/blob/main/LICENSE) file for details.
 
 ## Contact 📧
 
